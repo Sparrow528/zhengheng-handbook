@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>证衡基业 · 欧盟电池护照合规服务</title>
+<meta name="description" content="证衡基业为电芯厂、Pack 厂、储能集成商与出口贸易商提供欧盟电池护照（Regulation (EU) 2023/1542）全流程合规服务，覆盖 71 项数据点，四道 GATE 分阶段验收。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="证衡基业 · 欧盟电池护照合规服务">
+<meta property="og:description" content="2027 年 2 月起，进入欧洲市场的电池须携带数字产品护照。四道 GATE 全流程合规服务，覆盖 71 项数据点。">
+<meta property="og:locale" content="zh_CN">
+<!-- 上线后把下面这行换成封面图的绝对地址，微信分享卡片才会显示缩略图 -->
+<meta property="og:image" content="og-cover.png">
+<meta name="theme-color" content="#0B0D10">
+<meta name="apple-mobile-web-app-title" content="证衡基业">
+<meta name="format-detection" content="address=no">
+<script>document.documentElement.className += ' js';</script>
+<style>
+:root{
+  --ink:#0B0D10; --ink2:#14171C; --ink3:#1C2127;
+  --paper:#F4F1E9; --paper2:#E7E2D6;
+  --lime:#C6F13F; --amber:#FFC53D; --olive:#4C6018;
+  --t1:#ECEEE7; --t2:rgba(236,238,231,.64); --t3:rgba(236,238,231,.4);
+  --line:rgba(236,238,231,.15);
+  --p1:#181A18; --p2:rgba(24,26,24,.7); --p3:rgba(24,26,24,.46);
+  --pline:rgba(24,26,24,.16);
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC","Noto Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,"Cascadia Mono",Consolas,"SF Mono",Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--t1);font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;letter-spacing:.005em;line-height:1.6}
+h1,h2,h3,h4,p,ul,figure{margin:0}
+ul{padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+b,strong{font-weight:600}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+.mono{font-family:var(--mono)}
+
+/* ---------- top bar ---------- */
+.progress{position:fixed;top:0;left:0;right:0;height:2px;background:transparent;z-index:60}
+.progress i{display:block;height:100%;background:var(--lime);transform:scaleX(0);transform-origin:0 50%;
+  transition:transform .08s linear}
+.bar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(11,13,16,.88);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1180px;margin:0 auto;padding:0 40px;height:62px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:baseline;gap:12px;flex:0 0 auto}
+.brand b{font-size:16px;letter-spacing:.06em}
+.brand span{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--t3);text-transform:uppercase}
+.nav{display:flex;gap:22px;font-size:12.5px;color:var(--t2);overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{white-space:nowrap;padding:4px 0;border-bottom:1px solid transparent}
+.nav a.on{color:var(--lime);border-bottom-color:var(--lime)}
+.bar-tag{font-family:var(--mono);font-size:10.5px;color:var(--lime);border:1px solid rgba(198,241,63,.35);
+  padding:5px 9px;white-space:nowrap;flex:0 0 auto}
+
+/* ---------- sections ---------- */
+section{scroll-margin-top:72px}
+.sec{padding:104px 0}
+.sec.paper{background:var(--paper);color:var(--p1);
+  --t1:var(--p1); --t2:var(--p2); --t3:var(--p3); --line:var(--pline)}
+.sec-head{display:grid;grid-template-columns:1fr 360px;gap:56px;align-items:end;margin-bottom:52px}
+.sec-head h2{font-size:31px;font-weight:600;line-height:1.42;letter-spacing:-.005em}
+.sec-head p{font-size:13.5px;line-height:1.9;color:var(--t2)}
+.kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--amber);
+  text-transform:uppercase;margin-bottom:20px}
+
+/* ---------- hero ---------- */
+.hero{padding:128px 0 96px}
+.hero-grid{display:grid;grid-template-columns:1.24fr .88fr;gap:60px;align-items:start}
+.hero h1{font-size:clamp(30px,4vw,48px);line-height:1.34;font-weight:600;letter-spacing:-.01em}
+.hero h1 b{color:var(--lime);font-weight:600;white-space:nowrap}
+.hero .lede{margin-top:24px;font-size:14.5px;line-height:1.95;color:var(--t2);max-width:520px}
+.stats{display:flex;gap:44px;margin-top:48px;padding-top:26px;border-top:1px solid var(--line);flex-wrap:wrap}
+.stat b{display:block;font-family:var(--mono);font-size:27px;color:var(--lime);line-height:1}
+.stat span{display:block;font-size:11.5px;color:var(--t3);margin-top:9px}
+.scroll-cue{margin-top:44px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--t3)}
+
+/* ---------- fit widget ---------- */
+.fit{background:var(--ink2);border:1px solid var(--line)}
+.fit-hd{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;
+  border-bottom:1px solid var(--line);font-size:13px;color:var(--t2)}
+.fit-hd span:last-child{font-family:var(--mono);font-size:10px;color:var(--t3)}
+.fit-body{padding:20px}
+.fit-q{font-size:11px;letter-spacing:.1em;color:var(--t3);margin-bottom:10px;font-family:var(--mono)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chips:last-child{margin-bottom:0}
+.chip{font-size:12.5px;padding:8px 13px;border:1px solid var(--line);color:var(--t2);
+  transition:background .18s,color .18s,border-color .18s}
+.chip:hover{border-color:rgba(198,241,63,.5);color:var(--t1)}
+.chip[aria-pressed="true"]{background:var(--lime);border-color:var(--lime);color:#0B0D10;font-weight:500}
+.verdict{border-top:1px solid var(--line);padding:18px 20px 20px;transition:background .25s}
+.verdict .v-l{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--t3);display:block;margin-bottom:9px}
+.verdict strong{display:block;font-size:17px;font-weight:600;transition:color .25s}
+.verdict p{margin-top:8px;font-size:12px;line-height:1.8;color:var(--t2);min-height:44px}
+.verdict[data-s="yes"]{background:rgba(198,241,63,.1)}
+.verdict[data-s="yes"] strong{color:var(--lime)}
+.verdict[data-s="no"] strong{color:var(--t2)}
+.verdict[data-s="ask"] strong{color:var(--amber)}
+.fit-foot{padding:0 20px 18px;font-size:11px;line-height:1.8;color:var(--t3)}
+
+/* ---------- timeline ---------- */
+.tl{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.tl-list{border-top:1.5px solid var(--p1)}
+.tl-row{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:20px 0;
+  border-bottom:1px solid var(--pline)}
+.tl-row .d{font-family:var(--mono);font-size:12.5px;color:var(--olive);padding-top:2px}
+.tl-row h4{font-size:15px;font-weight:600;margin-bottom:6px}
+.tl-row p{font-size:12.5px;line-height:1.85;color:var(--p2)}
+.scope{border-top:1.5px solid var(--p1)}
+.scope-row{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;
+  padding:15px 0;border-bottom:1px solid var(--pline)}
+.scope-row div{font-size:13.5px;color:var(--p1)}
+.scope-row em{font-style:normal;font-family:var(--mono);font-size:9.5px;color:var(--p3);margin-left:8px}
+.tag-y{font-family:var(--mono);font-size:10px;padding:4px 9px;background:var(--p1);color:var(--paper)}
+.tag-n{font-family:var(--mono);font-size:10px;padding:4px 9px;border:1px solid var(--pline);color:var(--p3)}
+.note{font-size:11.5px;line-height:1.8;color:var(--p3);margin-top:14px}
+
+/* ---------- data points ---------- */
+.dp{margin-top:8px;border-top:1px solid var(--line)}
+.dp-item{border-bottom:1px solid var(--line)}
+.dp-head{display:grid;grid-template-columns:250px 1fr 26px;gap:26px;align-items:center;
+  width:100%;text-align:left;padding:16px 0;transition:opacity .2s}
+.dp-head:hover{opacity:.82}
+.dp-name{font-size:13px;line-height:1.45}
+.dp-name em{display:block;font-style:normal;font-family:var(--mono);font-size:9.5px;
+  color:var(--t3);margin-top:4px;letter-spacing:.02em}
+.dp-cells{display:flex;gap:6px}
+.dp-cells i{width:17px;height:17px;background:rgba(198,241,63,.14);border:1px solid rgba(198,241,63,.34);
+  transition:background .2s}
+.dp-item.open .dp-cells i{background:rgba(198,241,63,.5)}
+.plus{width:20px;height:20px;position:relative;justify-self:end}
+.plus::before,.plus::after{content:'';position:absolute;background:var(--t3);transition:transform .3s,background .3s}
+.plus::before{top:9px;left:0;width:20px;height:1.5px}
+.plus::after{left:9px;top:0;height:20px;width:1.5px}
+.dp-item.open .plus::after{transform:scaleY(0)}
+.dp-item.open .plus::before{background:var(--lime)}
+.acc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s ease}
+.acc-body > div{overflow:hidden}
+.dp-item.open .acc-body,
+.q6-item.open .acc-body{grid-template-rows:1fr}
+.dp-detail{display:grid;grid-template-columns:250px 1fr 26px;gap:26px;padding:0 0 20px}
+.dp-detail p{grid-column:2 / 4;font-size:12.5px;line-height:1.9;color:var(--t2);max-width:720px}
+.dp-detail p b{color:var(--lime);font-weight:500;margin-right:8px;font-size:11px;font-family:var(--mono)}
+.dp-total{display:flex;align-items:baseline;gap:14px;margin-top:26px}
+.dp-total b{font-family:var(--mono);font-size:52px;color:var(--lime);line-height:1}
+.dp-total span{font-size:12px;color:var(--t3)}
+
+/* ---------- gates tabs ---------- */
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--pline);
+  border:1px solid var(--pline)}
+.tab{background:var(--paper);padding:20px 18px;text-align:left;transition:background .2s}
+.tab .n{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--p3)}
+.tab .t{display:block;font-size:18px;font-weight:600;margin-top:8px;color:var(--p1)}
+.tab .s{display:block;font-size:11.5px;color:var(--p3);margin-top:6px}
+.tab[aria-selected="true"]{background:var(--p1)}
+.tab[aria-selected="true"] .n{color:var(--lime)}
+.tab[aria-selected="true"] .t{color:var(--paper)}
+.tab[aria-selected="true"] .s{color:rgba(244,241,233,.6)}
+.panels{margin-top:36px;min-height:216px}
+.panel{display:none;grid-template-columns:1.15fr .85fr;gap:56px}
+.panel.on{display:grid;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.panel h3{font-size:26px;font-weight:600;margin-bottom:18px}
+.panel h3 em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--p3);
+  margin-left:12px;letter-spacing:.1em;vertical-align:middle}
+.panel .acts li{font-size:13px;padding:10px 0;border-top:1px solid var(--pline);color:var(--p2);
+  display:grid;grid-template-columns:18px 1fr;gap:12px}
+.panel .acts li::before{content:'';width:6px;height:6px;background:var(--olive);margin-top:7px}
+.deliv{border-top:1.5px solid var(--p1);padding-top:16px}
+.deliv dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--p3);margin-bottom:10px}
+.deliv dd{margin:0 0 8px;font-size:15px;font-weight:600}
+.deliv .acc{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:10px;
+  padding:4px 8px;border:1px solid var(--pline);color:var(--p2)}
+
+/* ---------- six questions ---------- */
+.q6{margin-top:46px;border-top:1.5px solid var(--p1);padding-top:8px}
+.q6-item{border-bottom:1px solid var(--pline)}
+.q6-head{display:grid;grid-template-columns:44px 1fr 74px;gap:20px;align-items:center;
+  width:100%;text-align:left;padding:16px 0}
+.q6-head .i{font-family:var(--mono);font-size:10px;color:var(--olive)}
+.q6-head .q{font-size:16px;font-weight:600;color:var(--p1)}
+.q6-head .g{font-family:var(--mono);font-size:9.5px;color:var(--p3);text-align:right}
+.q6-item.open .q6-head .q{color:var(--olive)}
+.q6-body p{font-size:12.5px;line-height:1.9;color:var(--p2);padding:0 0 18px 64px}
+
+/* ---------- schedule ---------- */
+.tr-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:38px}
+.tr-tab{font-size:12.5px;padding:11px 16px;border:1px solid var(--line);color:var(--t2);
+  transition:background .2s,color .2s,border-color .2s;text-align:left}
+.tr-tab b{display:block;font-weight:500;color:var(--t1);transition:color .2s}
+.tr-tab[aria-selected="true"]{background:var(--lime);border-color:var(--lime);color:#0B0D10}
+.tr-tab[aria-selected="true"] b{color:#0B0D10}
+.gantt{display:none}
+.gantt.on{display:block;animation:fade .4s ease}
+.g-head{display:grid;grid-template-columns:172px 1fr;gap:22px;padding-bottom:8px;
+  border-bottom:1px solid var(--line);margin-bottom:6px}
+.g-head .wk{display:grid;grid-template-columns:repeat(16,1fr)}
+.g-head .wk span{font-family:var(--mono);font-size:9px;color:var(--t3)}
+.g-row{display:grid;grid-template-columns:172px 1fr;gap:22px;align-items:center;
+  padding:9px 0;border-bottom:1px solid rgba(236,238,231,.08)}
+.g-lbl{font-size:12.5px;color:var(--t1);line-height:1.4}
+.g-lbl em{display:block;font-style:normal;font-family:var(--mono);font-size:9px;color:var(--t3);margin-top:3px}
+.g-lbl.cl{color:var(--t3)}
+.g-track{position:relative;height:22px;
+  background-image:repeating-linear-gradient(to right,rgba(236,238,231,.1) 0 1px,transparent 1px 6.25%)}
+.g-bar{position:absolute;top:0;height:22px;left:calc((var(--s) - 1) / 16 * 100%);
+  width:calc(var(--w) / 16 * 100%);background:var(--lime);color:#0B0D10;
+  font-family:var(--mono);font-size:10px;display:flex;align-items:center;justify-content:center;
+  transition:left .55s cubic-bezier(.2,.8,.2,1),width .55s cubic-bezier(.2,.8,.2,1)}
+.g-bar.alt{background:transparent;border:1px solid var(--lime);color:var(--lime)}
+.g-bar.cli{background:rgba(236,238,231,.08);border:1px dashed rgba(236,238,231,.28);color:var(--t2)}
+.ms{display:flex;flex-wrap:wrap;gap:10px 30px;margin-top:20px}
+.ms span{font-size:12px;color:var(--t2);display:flex;align-items:baseline;gap:9px}
+.ms i{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--amber)}
+
+/* ---------- clause table ---------- */
+.ct{border-top:1.5px solid var(--p1);margin-top:6px}
+.ct-h,.ct-r{display:grid;grid-template-columns:170px 1fr 92px;gap:24px;padding:14px 0;
+  border-bottom:1px solid var(--pline);align-items:baseline}
+.ct-h{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--p3)}
+.ct-c{font-family:var(--mono);font-size:12px;color:var(--olive)}
+.ct-r .q{font-size:12.5px;line-height:1.75;color:var(--p2)}
+.ct-g{font-family:var(--mono);font-size:10.5px;color:var(--p3);text-align:right}
+
+/* ---------- why / audience ---------- */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin-top:8px}
+.why-i{background:var(--ink);padding:32px 32px 36px}
+.why-i .k{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--lime);margin-bottom:14px}
+.why-i h3{font-size:17px;font-weight:600;margin-bottom:11px}
+.why-i p{font-size:12.5px;line-height:1.9;color:var(--t2)}
+.aud{display:grid;grid-template-columns:repeat(4,1fr);gap:0 32px;margin-top:52px;
+  border-top:1px solid var(--line);padding-top:22px}
+.aud-i h4{font-size:14px;font-weight:600;margin-bottom:8px}
+.aud-i p{font-size:11.5px;line-height:1.85;color:var(--t2)}
+
+/* ---------- contact ---------- */
+.contact{background:var(--ink3);padding:60px 56px;display:grid;grid-template-columns:1.05fr .95fr;
+  gap:64px;align-items:start}
+.contact h2{font-size:clamp(26px,3.2vw,36px);font-weight:600;line-height:1.4}
+.contact p{margin-top:16px;font-size:13px;line-height:1.9;color:var(--t2);max-width:390px}
+.btn{display:inline-flex;align-items:center;height:48px;padding:0 24px;background:var(--lime);
+  color:#0B0D10;font-size:13.5px;font-weight:600;margin-top:28px;transition:transform .18s,box-shadow .18s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px -14px rgba(198,241,63,.9)}
+.foot-note{margin-top:18px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--t3)}
+.rows{border-top:1px solid rgba(236,238,231,.18)}
+.row{display:grid;grid-template-columns:80px 1fr;gap:18px;padding:15px 0;
+  border-bottom:1px solid rgba(236,238,231,.18);align-items:baseline}
+.row span{font-size:11.5px;color:var(--t3)}
+.row b{font-family:var(--mono);font-size:13px;font-weight:500}
+.row b small{display:block;font-family:var(--sans);font-size:10.5px;color:var(--t3);margin-top:4px}
+.end{border-top:1px solid var(--line);padding:30px 0 46px}
+.end-in{display:flex;justify-content:space-between;align-items:center;gap:24px;
+  font-size:11.5px;color:var(--t3);flex-wrap:wrap}
+.end-in .claim{font-size:13px;color:var(--t2);letter-spacing:.2em}
+
+/* ---------- reveal (only hidden when JS is on) ---------- */
+.js .rv{opacity:0;transform:translateY(18px);
+  transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .g-bar{transition:none}
+}
+@media print{
+  .rv{opacity:1 !important;transform:none !important}
+  .bar,.progress{display:none}
+  .sec{padding:28px 0}
+  .panel{display:grid !important}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:960px){
+  .wrap,.bar-in{padding:0 24px}
+  .hero{padding:138px 0 72px}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .sec{padding:76px 0}
+  .sec-head{grid-template-columns:1fr;gap:18px;margin-bottom:38px}
+  .sec-head h2{font-size:25px}
+  .tl{grid-template-columns:1fr;gap:40px}
+  .dp-head,.dp-detail{grid-template-columns:1fr 26px;gap:14px}
+  .dp-cells{grid-column:1 / 3;margin-top:2px}
+  .dp-detail p{grid-column:1 / 3}
+  .tabs{grid-template-columns:1fr 1fr}
+  .panel{grid-template-columns:1fr;gap:30px}
+  .q6-head{grid-template-columns:32px 1fr;gap:12px}
+  .q6-head .g{grid-column:2;text-align:left}
+  .q6-body p{padding-left:44px}
+  .g-head,.g-row{grid-template-columns:104px 1fr;gap:12px}
+  .g-lbl{font-size:11px}
+  .g-lbl em{display:none}
+  .ct-h,.ct-r{grid-template-columns:1fr;gap:6px}
+  .ct-g{text-align:left}
+  .why{grid-template-columns:1fr}
+  .aud{grid-template-columns:1fr 1fr;gap:24px 24px}
+  .contact{grid-template-columns:1fr;gap:36px;padding:44px 24px}
+  .bar-in{height:auto;padding:11px 24px 0;flex-wrap:wrap}
+  .brand{order:1}
+  .bar-tag{order:2}
+  .nav{order:3;width:100%;display:flex;gap:18px;font-size:12px;
+    border-top:1px solid var(--line);margin-top:9px;padding:9px 0 10px}
+  section{scroll-margin-top:112px}
+  .g-head .wk span:not(:nth-child(4n+1)){visibility:hidden}
+  .stats{gap:30px}
+}
+@media (max-width:560px){
+  .tabs{grid-template-columns:1fr}
+  .dp-cells i{width:14px;height:14px}
+  .brand span{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="progress"><i></i></div>
+
+<header class="bar">
+  <div class="bar-in">
+    <div class="brand">
+      <b>证衡基业</b>
+      <span>EU Battery Passport</span>
+    </div>
+    <nav class="nav" aria-label="章节导航">
+      <a href="#fit">适用判定</a>
+      <a href="#data">71 项数据点</a>
+      <a href="#gates">四道 GATE</a>
+      <a href="#schedule">排期</a>
+      <a href="#clauses">条款索引</a>
+      <a href="#contact">联系</a>
+    </nav>
+    <div class="bar-tag">2027.02.18</div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section id="fit" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">Regulation (EU) 2023/1542 · Article 77 · Annex XIII</p>
+      <h1>2027 年 2 月起，进入欧洲市场的电池须携带 <b>数字产品护照</b>。</h1>
+      <p class="lede">证衡基业为电芯厂、Pack 厂、储能集成商与出口贸易商提供从差距评估、数据建设、注册上线到年度托管的全流程合规服务，数据范围覆盖 71 项数据点。</p>
+      <div class="stats">
+        <div class="stat"><b>71</b><span>项护照数据点</span></div>
+        <div class="stat"><b>4</b><span>道 GATE 把关</span></div>
+        <div class="stat"><b>18</b><span>年审计合规底子</span></div>
+      </div>
+      <p class="scroll-cue">先做一次适用判定，再往下看服务流程</p>
+    </div>
+
+    <aside class="fit" aria-label="适用判定自查">
+      <div class="fit-hd"><span>适用判定自查</span><span>Article 77(1)</span></div>
+      <div class="fit-body">
+        <p class="fit-q" id="q-type">01 / 电池类型</p>
+        <div class="chips" role="group" aria-labelledby="q-type">
+          <button class="chip" data-g="type" data-v="ev" aria-pressed="false">电动汽车电池</button>
+          <button class="chip" data-g="type" data-v="lmt" aria-pressed="false">轻型交通工具电池</button>
+          <button class="chip" data-g="type" data-v="ind" aria-pressed="false">工业电池</button>
+          <button class="chip" data-g="type" data-v="other" aria-pressed="false">其他</button>
+        </div>
+        <p class="fit-q" id="q-cap">02 / 额定容量</p>
+        <div class="chips" role="group" aria-labelledby="q-cap">
+          <button class="chip" data-g="cap" data-v="gt2" aria-pressed="false">&gt; 2kWh</button>
+          <button class="chip" data-g="cap" data-v="le2" aria-pressed="false">≤ 2kWh</button>
+          <button class="chip" data-g="cap" data-v="na" aria-pressed="false">未确定</button>
+        </div>
+      </div>
+      <div class="verdict" id="verdict" data-s="ask" aria-live="polite">
+        <span class="v-l">判定结果</span>
+        <strong>请先选择电池类型</strong>
+        <p>选定类型与容量后，这里给出是否落入护照强制范围。</p>
+      </div>
+      <p class="fit-foot">判定依据为电池类型与额定容量。容量边界、便携式判定等情形，以差距评估中条款对照的结论为准。</p>
+    </aside>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="scope" class="sec paper">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>什么电池要做，什么时候开始</h2>
+      <p>护照义务按电池类型与额定容量划分。出口目的地是欧盟成员国，且电池属于下列三类之一，即需在上市前完成护照注册。</p>
+    </div>
+    <div class="tl">
+      <div class="tl-list rv">
+        <div class="tl-row">
+          <div class="d">2023.08.17</div>
+          <div>
+            <h4>法规生效</h4>
+            <p>Regulation (EU) 2023/1542 生效，电池护照要求写入第 77 条与附件 XIII。</p>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="d">2027.02.18</div>
+          <div>
+            <h4>护照强制适用</h4>
+            <p>进入欧盟市场的电动汽车电池、轻型交通工具电池与 2kWh 以上工业电池须携带数字产品护照，覆盖 71 项数据点。</p>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="d">此后每年</div>
+          <div>
+            <h4>数据更新与版本管理</h4>
+            <p>上市后数据发生变化时更新护照版本，年度托管处理数据更新、版本管理与抽查应对。</p>
+          </div>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="scope">
+          <div class="scope-row"><div>电动汽车电池<em>EV battery</em></div><span class="tag-y">适用</span></div>
+          <div class="scope-row"><div>轻型交通工具电池<em>LMT battery</em></div><span class="tag-y">适用</span></div>
+          <div class="scope-row"><div>工业电池 &gt; 2kWh（含储能）<em>Industrial</em></div><span class="tag-y">适用</span></div>
+          <div class="scope-row"><div>工业电池 ≤ 2kWh<em>Industrial</em></div><span class="tag-n">不适用</span></div>
+        </div>
+        <p class="note">客户覆盖：电芯厂、Pack 厂、储能集成商、出口贸易商。四类客户在数据归口上的位置不同，电芯厂通常是数据产生端。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 71 DATA POINTS -->
+<section id="data" class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>71 项数据点，按 8 组归口</h2>
+      <p>数据建设阶段按 Annex XIII 的 8 组结构逐项归口，指定数据来源方、收数、校验，最终交付数据台账与证据包。点开任一组看法与校验要点。</p>
+    </div>
+
+    <div class="dp rv" id="dpList">
+      <div class="dp-item">
+        <button class="dp-head" aria-expanded="false">
+          <span class="dp-name">一般电池与制造商信息<em>General battery &amp; manufacturer</em></span>
+          <span class="dp-cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="acc-body"><div><div class="dp-detail"><p><b>来源</b>电池铭牌、型号规格书、生产批次记录。<b>校验</b>型号与批次一一对应，制造商与经济运营者信息一致。</p></div></div></div>
+      </div>
+
+      <div class="dp-item">
+        <button class="dp-head" aria-expanded="false">
+          <span class="dp-name">电池碳足迹<em>Battery carbon footprint</em></span>
+          <span class="dp-cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="acc-body"><div><div class="dp-detail"><p><b>来源</b>生命周期核算报告、电芯端能耗与物流数据。<b>校验</b>按生命周期阶段拆分，需第三方核验后写入护照。</p></div></div></div>
+      </div>
+
+      <div class="dp-item">
+        <button class="dp-head" aria-expanded="false">
+          <span class="dp-name">再生材料含量<em>Recycled content</em></span>
+          <span class="dp-cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="acc-body"><div><div class="dp-detail"><p><b>来源</b>材料采购记录、供应商声明与回收料凭证。<b>校验</b>按材料类别分别举证，含量口径与计算方式需统一。</p></div></div></div>
+      </div>
+
+      <div class="dp-item">
+        <button class="dp-head" aria-expanded="false">
+          <span class="dp-name">供应链尽职调查<em>Supply chain due diligence</em></span>
+          <span class="dp-cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="acc-body"><div><div class="dp-detail"><p><b>来源</b>尽职调查政策、年度报告与第三方审核结论。<b>校验</b>覆盖钴、天然石墨、锂、镍及其化合物，与社会责任信息分开归口。</p></div></div></div>
+      </div>
+
+      <div class="dp-item">
+        <button class="dp-head" aria-expanded="false">
+          <span class="dp-name">电池性能与耐久性<em>Performance &amp; durability</em></span>
+          <span class="dp-cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="acc-body"><div><div class="dp-detail"><p><b>来源</b>型式试验报告、循环寿命与容量保持率测试记录。<b>校验</b>测试方法与报告口径一致，第三方检测机构信息完整。</p></div></div></div>
+      </div>
+
+      <div class="dp-item">
+        <button class="dp-head" aria-expanded="false">
+          <span class="dp-name">电池健康状态<em>State of health</em></span>
+          <span class="dp-cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="acc-body"><div><div class="dp-detail"><p><b>来源</b>BMS 运行数据、系统级参数与使用阶段记录。<b>校验</b>随使用阶段更新版本，数据来源与采样口径需可追溯。</p></div></div></div>
+      </div>
+
+      <div class="dp-item">
+        <button class="dp-head" aria-expanded="false">
+          <span class="dp-name">标签与合格标志<em>Labels &amp; certificates</em></span>
+          <span class="dp-cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="acc-body"><div><div class="dp-detail"><p><b>来源</b>标签设计稿、CE 标识、EU 合格声明与 QR 码指向。<b>校验</b>护照入口与实物标签一致，扫码可达。</p></div></div></div>
+      </div>
+
+      <div class="dp-item">
+        <button class="dp-head" aria-expanded="false">
+          <span class="dp-name">材料成分<em>Material composition</em></span>
+          <span class="dp-cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="acc-body"><div><div class="dp-detail"><p><b>来源</b>BOM、正负极材料与电解液成分表。<b>校验</b>化学体系与含量单位统一，与检测报告相互印证。</p></div></div></div>
+      </div>
+    </div>
+
+    <div class="dp-total rv"><b>71</b><span>项数据点须在护照注册前完成归口、收数与校验</span></div>
+  </div>
+</section>
+
+<!-- GATES + SIX QUESTIONS -->
+<section id="gates" class="sec paper">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>四道 GATE，每一道可独立验收</h2>
+      <p>四阶段按顺序推进，也可单独委托其中一段。每道 GATE 有明确的交付物与验收口径，问题在阶段内关闭。点标签切换查看。</p>
+    </div>
+
+    <div class="tabs rv" role="tablist" aria-label="四道 GATE">
+      <button class="tab" role="tab" aria-selected="true" data-g="0">
+        <span class="n">GATE 01</span><span class="t">差距评估</span><span class="s">查清现状与缺口</span>
+      </button>
+      <button class="tab" role="tab" aria-selected="false" data-g="1">
+        <span class="n">GATE 02</span><span class="t">数据建设</span><span class="s">71 项逐项归口</span>
+      </button>
+      <button class="tab" role="tab" aria-selected="false" data-g="2">
+        <span class="n">GATE 03</span><span class="t">注册上线</span><span class="s">护照与权限配置</span>
+      </button>
+      <button class="tab" role="tab" aria-selected="false" data-g="3">
+        <span class="n">GATE 04</span><span class="t">年度托管</span><span class="s">更新与抽查应对</span>
+      </button>
+    </div>
+
+    <div class="panels rv">
+      <div class="panel on" role="tabpanel">
+        <div>
+          <h3>差距评估<em>GATE 01</em></h3>
+          <ul class="acts">
+            <li>现状盘点：现有材料、检测报告、供应商信息逐项过一遍</li>
+            <li>条款对照：把现状对到 Regulation (EU) 2023/1542 与附件 XIII 的具体项</li>
+            <li>缺口清单：已经具备什么、还缺什么、缺的由谁补</li>
+          </ul>
+        </div>
+        <dl class="deliv">
+          <dt>DELIVERABLES</dt>
+          <dd>差距评估报告</dd>
+          <dd>整改路线图</dd>
+          <span class="acc">可独立验收</span>
+        </dl>
+      </div>
+
+      <div class="panel" role="tabpanel">
+        <div>
+          <h3>数据建设<em>GATE 02</em></h3>
+          <ul class="acts">
+            <li>归口：每项数据点对应到部门、供应商与文件来源</li>
+            <li>收数：按归口结果收数，记录版本与提交时间</li>
+            <li>校验：核对口径与单位，标注需第三方核验的项目</li>
+          </ul>
+        </div>
+        <dl class="deliv">
+          <dt>DELIVERABLES</dt>
+          <dd>数据台账</dd>
+          <dd>证据包</dd>
+          <span class="acc">可独立验收</span>
+        </dl>
+      </div>
+
+      <div class="panel" role="tabpanel">
+        <div>
+          <h3>注册上线<em>GATE 03</em></h3>
+          <ul class="acts">
+            <li>护照注册：在欧盟电池护照系统中建立护照记录</li>
+            <li>系统对接：数据以台账或接口方式写入</li>
+            <li>权限配置：区分监管方、客户与内部角色的访问范围</li>
+          </ul>
+        </div>
+        <dl class="deliv">
+          <dt>DELIVERABLES</dt>
+          <dd>上线护照</dd>
+          <dd>操作手册</dd>
+          <span class="acc">可独立验收</span>
+        </dl>
+      </div>
+
+      <div class="panel" role="tabpanel">
+        <div>
+          <h3>年度托管<em>GATE 04</em></h3>
+          <ul class="acts">
+            <li>数据更新：材料、供应商或性能数据变化时同步护照</li>
+            <li>版本管理：保留历次修改痕迹与依据文件</li>
+            <li>抽查应对：监管问询与客户索证时提供对应材料</li>
+          </ul>
+        </div>
+        <dl class="deliv">
+          <dt>DELIVERABLES</dt>
+          <dd>年度合规报告</dd>
+          <span class="acc">可独立验收</span>
+        </dl>
+      </div>
+    </div>
+
+    <div class="q6 rv">
+      <div class="q6-item">
+        <button class="q6-head" aria-expanded="false">
+          <span class="i">01</span><span class="q">要不要做</span><span class="g">GATE 01</span>
+        </button>
+        <div class="acc-body"><div><div class="q6-body"><p>按电池类型、额定容量与出口目的地判定是否落入护照范围。EV 电池与 LMT 电池不按容量划分；工业电池以 2kWh 为界。</p></div></div></div>
+      </div>
+      <div class="q6-item">
+        <button class="q6-head" aria-expanded="false">
+          <span class="i">02</span><span class="q">对应哪一条</span><span class="g">GATE 01</span>
+        </button>
+        <div class="acc-body"><div><div class="q6-body"><p>逐条比对 Regulation (EU) 2023/1542 与附件 XIII 的数据要求，落到具体条款，形成条款对照表。</p></div></div></div>
+      </div>
+      <div class="q6-item">
+        <button class="q6-head" aria-expanded="false">
+          <span class="i">03</span><span class="q">谁提供</span><span class="g">GATE 02</span>
+        </button>
+        <div class="acc-body"><div><div class="q6-body"><p>每项数据点归口到具体部门、供应商与文件来源，形成责任矩阵。电芯端与 Pack 端常见的分歧在这里先讲清楚。</p></div></div></div>
+      </div>
+      <div class="q6-item">
+        <button class="q6-head" aria-expanded="false">
+          <span class="i">04</span><span class="q">凭什么证明</span><span class="g">GATE 02</span>
+        </button>
+        <div class="acc-body"><div><div class="q6-body"><p>原始凭证、校验记录与第三方核验报告构成证据包，用于应对抽查与客户索证。</p></div></div></div>
+      </div>
+      <div class="q6-item">
+        <button class="q6-head" aria-expanded="false">
+          <span class="i">05</span><span class="q">谁可以看</span><span class="g">GATE 03</span>
+        </button>
+        <div class="acc-body"><div><div class="q6-body"><p>按监管方、客户与内部角色配置访问权限，经济运营者身份在上线时确定。</p></div></div></div>
+      </div>
+      <div class="q6-item">
+        <button class="q6-head" aria-expanded="false">
+          <span class="i">06</span><span class="q">何时更新</span><span class="g">GATE 04</span>
+        </button>
+        <div class="acc-body"><div><div class="q6-body"><p>数据发生变更即更新护照版本，年度托管统一处理更新、版本与抽查。</p></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule" class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>从申请到上线的排期</h2>
+      <p>排期从启动会计时。两条轨道的差别集中在数据建设阶段：电芯端与 Pack 端要归口的数据点更多，供应商收数链更长。切换轨道查看。</p>
+    </div>
+
+    <div class="tr-tabs rv" role="tablist" aria-label="排期轨道">
+      <button class="tr-tab" role="tab" aria-selected="true" data-t="a">
+        <b>轨道 A · 电芯厂 / Pack 厂</b>16 周上线
+      </button>
+      <button class="tr-tab" role="tab" aria-selected="false" data-t="b">
+        <b>轨道 B · 储能集成商</b>12 周上线
+      </button>
+    </div>
+
+    <div class="gantt on" data-t="a">
+      <div class="g-head">
+        <div></div>
+        <div class="wk">
+          <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span>
+          <span>09</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span>
+        </div>
+      </div>
+      <div class="g-row">
+        <div class="g-lbl">GATE 01 差距评估<em>盘点 / 对照 / 缺口</em></div>
+        <div class="g-track"><div class="g-bar" style="--s:1;--w:3">3 周</div></div>
+      </div>
+      <div class="g-row">
+        <div class="g-lbl">GATE 02 数据建设<em>归口 / 收数 / 校验</em></div>
+        <div class="g-track"><div class="g-bar" style="--s:4;--w:7">7 周</div></div>
+      </div>
+      <div class="g-row">
+        <div class="g-lbl">GATE 03 注册上线<em>注册 / 对接 / 权限</em></div>
+        <div class="g-track"><div class="g-bar" style="--s:11;--w:4">4 周</div></div>
+      </div>
+      <div class="g-row">
+        <div class="g-lbl">GATE 04 年度托管<em>更新 / 版本 / 抽查</em></div>
+        <div class="g-track"><div class="g-bar alt" style="--s:15;--w:2">持续</div></div>
+      </div>
+      <div class="g-row">
+        <div class="g-lbl cl">客户侧<em>资料准备 / 供应商收数</em></div>
+        <div class="g-track"><div class="g-bar cli" style="--s:1;--w:9">9 周</div></div>
+      </div>
+      <div class="ms">
+        <span><i>W03</i>差距评估报告</span>
+        <span><i>W10</i>数据台账与证据包</span>
+        <span><i>W14</i>上线护照与操作手册</span>
+        <span><i>W16</i>年度合规报告</span>
+      </div>
+    </div>
+
+    <div class="gantt" data-t="b">
+      <div class="g-head">
+        <div></div>
+        <div class="wk">
+          <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span>
+          <span>09</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span>
+        </div>
+      </div>
+      <div class="g-row">
+        <div class="g-lbl">GATE 01 差距评估<em>适用判定 / 条款对照</em></div>
+        <div class="g-track"><div class="g-bar" style="--s:1;--w:2">2 周</div></div>
+      </div>
+      <div class="g-row">
+        <div class="g-lbl">GATE 02 数据建设<em>系统参数归口 / 校验</em></div>
+        <div class="g-track"><div class="g-bar" style="--s:3;--w:5">5 周</div></div>
+      </div>
+      <div class="g-row">
+        <div class="g-lbl">GATE 03 注册上线<em>注册 / 对接 / 权限</em></div>
+        <div class="g-track"><div class="g-bar" style="--s:8;--w:4">4 周</div></div>
+      </div>
+      <div class="g-row">
+        <div class="g-lbl">GATE 04 年度托管<em>更新 / 版本</em></div>
+        <div class="g-track"><div class="g-bar alt" style="--s:12;--w:2">持续</div></div>
+      </div>
+      <div class="g-row">
+        <div class="g-lbl cl">客户侧<em>资料准备 / 内部评审</em></div>
+        <div class="g-track"><div class="g-bar cli" style="--s:1;--w:6">6 周</div></div>
+      </div>
+      <div class="ms">
+        <span><i>W02</i>差距评估报告</span>
+        <span><i>W07</i>数据台账与证据包</span>
+        <span><i>W11</i>上线护照与操作手册</span>
+        <span><i>W12</i>年度托管启动</span>
+      </div>
+    </div>
+
+    <p class="note rv" style="color:var(--t3)">上表为标准口径。启动会确认范围、供应商数量与第三方核验安排后，排期按实际情况调整并写入项目计划。</p>
+  </div>
+</section>
+
+<!-- CLAUSES -->
+<section id="clauses" class="sec paper">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>法规条款索引</h2>
+      <p>护照工作分布在多个条款与附件上。下表是服务过程中反复引用的部分，以及各自落在哪一道 GATE。</p>
+    </div>
+    <div class="ct rv">
+      <div class="ct-h"><span>条款 / 附件</span><span>要求</span><span>落在</span></div>
+      <div class="ct-r"><span class="ct-c">Article 77</span><span class="q">电池护照的建立、唯一访问入口，以及经济运营者在上线后维护数据的义务</span><span class="ct-g">GATE 03</span></div>
+      <div class="ct-r"><span class="ct-c">Annex XIII</span><span class="q">护照信息项，共 71 项数据点，按 8 组归口</span><span class="ct-g">GATE 02</span></div>
+      <div class="ct-r"><span class="ct-c">Article 96</span><span class="q">施行与适用日期，2027 年 2 月 18 日起对相关电池适用</span><span class="ct-g">全阶段</span></div>
+      <div class="ct-r"><span class="ct-c">Article 7</span><span class="q">电池碳足迹声明，按生命周期核算并完成核验</span><span class="ct-g">GATE 02</span></div>
+      <div class="ct-r"><span class="ct-c">Article 8</span><span class="q">再生材料含量，按材料类别分别记录与证明</span><span class="ct-g">GATE 02</span></div>
+      <div class="ct-r"><span class="ct-c">Article 9</span><span class="q">性能与耐久性要求，电化学性能与循环寿命参数</span><span class="ct-g">GATE 02</span></div>
+      <div class="ct-r"><span class="ct-c">Article 47</span><span class="q">供应链尽职调查政策，覆盖钴、天然石墨、锂、镍及其化合物</span><span class="ct-g">GATE 01</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>为什么选择证衡基业</h2>
+      <p>客户要的是一份能通过审核的护照，而不是一套需要自己运营的系统。</p>
+    </div>
+    <div class="why rv">
+      <div class="why-i">
+        <div class="k">RESULT</div>
+        <h3>交付能过审的结果</h3>
+        <p>报告、台账、证据包、上线护照与年度合规报告均可直接调取，对应审核中的具体问题。</p>
+      </div>
+      <div class="why-i">
+        <div class="k">AUDIT</div>
+        <h3>18 年审计底子</h3>
+        <p>长期处理证据链与审计应对，清楚审核方在材料完整性、口径一致性与可追溯性上的关注点。</p>
+      </div>
+      <div class="why-i">
+        <div class="k">ONE ENTITY</div>
+        <h3>认证、标准、计量同主体</h3>
+        <p>认证咨询、标准化服务与计量技术服务由同一主体提供，减少多头对接与口径不一。</p>
+      </div>
+      <div class="why-i">
+        <div class="k">GATES</div>
+        <h3>四道 GATE 把关</h3>
+        <p>每一阶段可独立验收，客户可以先只做差距评估，再决定是否继续推进数据建设与注册上线。</p>
+      </div>
+    </div>
+
+    <div class="aud rv">
+      <div class="aud-i"><h4>电芯厂</h4><p>材料成分、碳足迹与再生含量数据的产生端，通常是数据归口最集中的一方。</p></div>
+      <div class="aud-i"><h4>Pack 厂</h4><p>Pack 级 BOM、性能与耐久性数据、标签信息的集成端，需与电芯端核对口径。</p></div>
+      <div class="aud-i"><h4>储能集成商</h4><p>系统级参数与运行数据、经济运营者与访问权限的配置方。</p></div>
+      <div class="aud-i"><h4>出口贸易商</h4><p>面向欧盟客户索证与批次出口，护照需可用、数据可更新、年度可复用。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact rv">
+      <div>
+        <h2>先做一次差距评估</h2>
+        <p>提交电池类型、出口国家与计划上市时间，我们给出适用判定与差距清单样表，再决定是否进入数据建设。</p>
+        <a class="btn" href="mailto:compliance@zhengheng.cn?subject=%E9%A2%84%E7%BA%A6%E5%B7%AE%E8%B7%9D%E8%AF%84%E4%BC%B0">预约差距评估</a>
+        <p class="foot-note">GATE 01 · 差距评估报告 / 整改路线图</p>
+      </div>
+      <div class="rows">
+        <div class="row"><span>商务咨询</span><b>400-000-0000</b></div>
+        <div class="row"><span>邮箱</span><b>compliance@zhengheng.cn</b></div>
+        <div class="row"><span>办公地址</span><b>上海市××区××路 00 号<small>邮编 200000</small></b></div>
+        <div class="row"><span>服务时间</span><b>工作日 09:00–18:00</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="end">
+  <div class="wrap end-in">
+    <div class="claim">以证立信　以衡定准</div>
+    <div>证衡基业 · 欧盟电池护照中国落地服务</div>
+    <div class="mono">Regulation (EU) 2023/1542</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* reading progress */
+  var bar = document.querySelector('.progress i');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? h.scrollTop / max : 0;
+    bar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* active nav */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+  var sections = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if ('IntersectionObserver' in window && sections.length){
+    var navIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        links.forEach(function(l){
+          l.classList.toggle('on', l.getAttribute('href') === '#' + e.target.id);
+        });
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    sections.forEach(function(s){ navIO.observe(s); });
+  }
+
+  /* reveal on scroll */
+  var revealables = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window){
+    var rIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); rIO.unobserve(e.target); }
+      });
+    }, {threshold:.1, rootMargin:'0px 0px -8% 0px'});
+    revealables.forEach(function(el){ rIO.observe(el); });
+  } else {
+    revealables.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* applicability checker */
+  var state = {type:null, cap:null};
+  var verdict = document.getElementById('verdict');
+  var copy = {
+    'ev':      ['yes','适用：须完成护照注册','电动汽车电池不按额定容量划分，均在护照强制范围内。上市前需完成注册与数据上线。'],
+    'lmt':     ['yes','适用：须完成护照注册','轻型交通工具电池不按额定容量划分，均在护照强制范围内。'],
+    'ind-gt2': ['yes','适用：须完成护照注册','额定容量超过 2kWh 的工业电池（含储能系统）在护照强制范围内。'],
+    'ind-le2': ['no','不适用：不在护照强制范围','2kWh 以下的工业电池不承担护照义务，法规中的其他要求仍需逐条确认。'],
+    'other':   ['ask','需人工判定','便携式电池等其他类别不在护照强制范围；如涉及跨界用途，以差距评估中的条款对照结论为准。']
+  };
+  function setState(){
+    var st = verdict;
+    var key;
+    if (!state.type){ st.dataset.s = 'ask'; st.querySelector('strong').textContent = '请先选择电池类型';
+      st.querySelector('p').textContent = '选定类型与容量后，这里给出是否落入护照强制范围。'; return; }
+    if (state.type === 'other'){ key = 'other'; }
+    else if (state.type === 'ind'){
+      if (!state.cap){ st.dataset.s = 'ask'; st.querySelector('strong').textContent = '还需确认额定容量';
+        st.querySelector('p').textContent = '工业电池以 2kWh 为界：超过则适用，2kWh 及以下不适用。'; return; }
+      key = state.cap === 'gt2' ? 'ind-gt2' : (state.cap === 'le2' ? 'ind-le2' : 'other');
+      if (state.cap === 'na'){ st.dataset.s='ask'; st.querySelector('strong').textContent='还需确认额定容量';
+        st.querySelector('p').textContent='工业电池以 2kWh 为界，容量未定时无法给出结论。'; return; }
+    } else {
+      key = state.type;
+    }
+    var c = copy[key];
+    st.dataset.s = c[0];
+    st.querySelector('strong').textContent = c[1];
+    st.querySelector('p').textContent = c[2];
+  }
+  document.querySelectorAll('.chip').forEach(function(chip){
+    chip.setAttribute('aria-pressed','false');
+    chip.addEventListener('click', function(){
+      var g = chip.dataset.g, v = chip.dataset.v;
+      state[g] = (state[g] === v) ? null : v;
+      document.querySelectorAll('.chip[data-g="' + g + '"]').forEach(function(c2){
+        c2.setAttribute('aria-pressed', c2.dataset.v === state[g] ? 'true' : 'false');
+      });
+      if (g === 'type' && (state.type === 'ev' || state.type === 'lmt')) state.cap = null;
+      document.querySelectorAll('.chip[data-g="cap"]').forEach(function(c3){
+        c3.setAttribute('aria-pressed', c3.dataset.v === state.cap ? 'true' : 'false');
+      });
+      setState();
+    });
+  });
+
+  /* accordions (data points + six questions) */
+  document.querySelectorAll('.dp-head, .q6-head').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.dp-item, .q6-item');
+      var open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  /* gate tabs */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
+  tabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t, j){
+        t.setAttribute('aria-selected', j === i ? 'true' : 'false');
+        panels[j].classList.toggle('on', j === i);
+      });
+    });
+    tab.addEventListener('keydown', function(e){
+      var n = e.key === 'ArrowRight' ? i+1 : e.key === 'ArrowLeft' ? i-1 : null;
+      if (n === null) return;
+      e.preventDefault();
+      var t = tabs[(n + tabs.length) % tabs.length];
+      t.focus(); t.click();
+    });
+  });
+
+  /* schedule track toggle */
+  var trTabs = Array.prototype.slice.call(document.querySelectorAll('.tr-tab'));
+  var gantts = Array.prototype.slice.call(document.querySelectorAll('.gantt'));
+  trTabs.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var key = btn.dataset.t;
+      trTabs.forEach(function(b){ b.setAttribute('aria-selected', b.dataset.t === key ? 'true' : 'false'); });
+      gantts.forEach(function(g){
+        var on = g.dataset.t === key;
+        g.classList.toggle('on', on);
+        if (on){
+          g.querySelectorAll('.g-bar').forEach(function(barEl, idx){
+            var s = barEl.style.getPropertyValue('--s'), w = barEl.style.getPropertyValue('--w');
+            barEl.style.transition = 'none';
+            barEl.style.width = '0';
+            setTimeout(function(){
+              barEl.style.transition = '';
+              barEl.style.setProperty('--w', w);
+              barEl.style.width = '';
+            }, 30 + idx*70);
+          });
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
